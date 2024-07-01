@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="index">
+<head>
+
+<meta charset="utf-8">
+<meta name ="keyword" content="HTML 5, CSS 3, JavaScript, JOuery, Angularjs"/>
+<meta name="description" content=" Dynamic web developrment">
+<meta name ="author" content="mildred">
+<meta name=" viewport" content ="width=device-width, initial-scale=1.0">
+<title> float layout</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="../CSS/CSS.css">
+<style>
+tr,td{
+    padding: 7px;  
+    margin-top: 30px; 
+    width: 700px;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 17px;
+    border-bottom: solid 1px grey ;
+}
+input{
+    width: 300px;
+    height: 50px;
+}
+form{
+    border: solid 1px;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+h3{
+    font-size: 20px;
+}
+
+
+
+</style>
+</head>
+<body> 
+    <!--topnav-->    
+    <nav class="topnav">
+        <ul>
+            <li><h2 class="h2"><img src="../Images/tracylogo2.png" height="100" width="100" class="animate"> <div style="color: white; margin-top: 0px;">Cleaning Company</div></h2></li>
+            <li><a href="../Home.html">Home</a></li>
+            <li><a href="../Pages/About Us.html">About Us</a></li>
+            <li><a href="Services.html">Services</a></li>
+
+            <div class="right" style="float: right; margin-right: 30px;" >
+            <li><a href="FAQ.html">FAQS</a></li>
+            <li><a href="Tesstimonial.html">Testimonial</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Order Form</h1>
+       
+    </header>
+    
+    <!--Services list-->
+    <section class="row">
+        <article class="col-8">
+            <form  method="post" action="" autocomplete="off">
+                <table>
+                    <tr>
+                        <td colspan="2"><h2>Book your cleaning service in 60 seconds</h2></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h3>Contact Information</h3>
+                        <p>This information will be used to contact you about your service.</p></td>
+                    </tr>
+                    <tr>
+                        <td><label>Your Nmae</label><br/>
+                            <input type="text"></td>  
+                        <td><label>Address</label><br/>
+                        <input type="text"></td>                      
+                    </tr>
+                    <tr>
+                        <td><label>Contact No</label><br/>
+                        <input type="tel"></td>
+                        <td><label>Email</label><br/>
+                        <input type="text"></td>
+                    </tr>
+                </table>
+              
+                        <h3>Home Information</h3>
+                       <h4>Tell us about your home</h4>  
+                       <label>(living room & kitchen included)</label> <br/>
+                       
+                <table>
+                    <tr>
+                        <td colspan="2"><label>Number of Bedroom</label>
+                            <input type="number" placeholder="0"></td>
+                    </tr>   
+                    
+                    <tr>
+                        <td colspan="2"><label>Number of Bathroom</label>
+                            <input type="number" placeholder="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><h4>Service Requested</h4>
+                        <select>
+                            <option>- Please Select -</option>
+                            <option>Apartment Cleaning</option>
+                            <option>House Cleaning</option>
+                            <option>Move In / Move Out</option>
+                            <option>Сarpet Сleaning</option>
+                            <option>After Renovation</option>
+                            <option>Curtain Cleaning</option>
+                            <option>Window Cleaning</option>
+                            <option>Commercial Cleaning</option>
+                            <option>Residential Cleaning</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>When would you like us to come?</label>
+                        <input type="date"></td>
+
+                        <td><label>Any time between </label>
+                        <input type="time"> - <input type="time"></td></td>
+                    </tr>
+                    
+                    <tr><td colspan="2"><p style="text-align: center;">We will confirm your service request within 24 hours. Thank you very much!</p>
+                    
+                    <input type="submit" value="BOOK NOW" style="background-color: aqua; margin-left: 300px; border-color: aliceblue; cursor: pointer; width: 200px;" ></td></tr>
+                    
+                   
+                </table>
+                
+
+
+            </form>            
+          
+        </article>
+    </section>
+
+
+
+    <!--Cleaning services-->
+<div class="cleaning-service-container">
+    <section class="row">
+        <article class="col-6">     
+            <div class="cleaning-service-list">
+                <div class="cleaning-p">
+            
+        </div>
+            <h1>Cleaning Services</h1>
+            <ul>
+                <li><a href="Apartment Cleaning">Apartment Cleaning</a></li>
+                <li><a href="House Cleaning">House Cleaning</a></li>
+                <li><a href="Move In / Move Out">Move In / Move Out</a></li>
+                <li><a href="Carpet Cleaning">Carpet Cleaning</a></li>
+                <li><a href="After Renovation">After Renovation</a></li>
+                <li><a href="Curtain Cleaning">Curtain Cleaning</a></li>
+                <li><a href="Window Cleaning">Window Cleaning</a></li>
+                <li><a href="Commercial Cleaning">Commercial Cleaning</a></li>
+                <li><a href="Residential Cleaning">Residential Cleaning
+                </a></li>
+            </ul>       
+        </div>
+        </article>
+        
+        <aside class="col-6">
+        <div class="contact">
+        <!--Contact information--> 
+            <h1>Contact Information</h1>
+            <p>3261 Anmoore Road Brooklyn, NY 11230</p>
+            <p>800-123-4567, Fax: 718-724-3312</p>
+            <p>officeone@youremail.com</p>
+            <p>Mon-Sat: 9:00 am – 5:00 pm</p>
+            <p><a href="Get Estimate.html">Get Estimate</a></p>
+        </div>       
+</aside>    
+    </section>
+</div>
+
+    <!--Footers--> 
+    <footer>
+        © 2022 Cleaning. Privacy Policy
+    </footer>
+    
+    
+</body>
+
+</html>
