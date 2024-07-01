@@ -10,19 +10,26 @@
 <title> float layout</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../CSS/CSS.css">
+<style>
+input{
+    width: 200px;
+    height: 30px;
+    
+}
+</style>
 </head>
 <body> 
     <!--topnav-->    
     <nav class="topnav">
         <ul>
-            <li><h2 class="h2"><img src="../Images/tracylogo2.png" height="100" width="100" class="animate"> <div style="color: white; margin-top: 0px;">Cleaning Company</div></h2></li>
+            <li><h2 class="h2"><div style="color: white; margin-top: 0px;">Cleaning Company</div></h2></li>
             <li><a href="../Home.html">Home</a></li>
-            <li><a href="../Pages/About Us.html">About Us</a></li>
-            <li><a href="Services.html">Services</a></li>
-
+            <li><a href="About Us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+    
             <div class="right" style="float: right; margin-right: 30px;" >
-            <li><a href="FAQS.html">FAQS</a></li>
-            <li><a href="Testimonial.html">Testimonial</a></li>
+            <li><a href="FAQ.html">FAQS</a></li>
+            <li><a href="Tesstimonial.html">Testimonial</a></li>
             <li><a href="Shop.html">Shop</a></li>
             <li><a href="#">Contact</a></li>
             </div>
@@ -36,8 +43,8 @@
              would be happy to provide you with excellent cleaning service. </p>
     </header>
 
-    <form action="casseinformation.py" method="POST">   
-        <section class="row" style="background-color: rgb(197, 204, 206); padding: 20px; letter-spacing: 0.5px; font-size: 19px;">
+    <form action="" method="POST">   
+        <section class="row" style=" padding: 20px; letter-spacing: 0.5px; font-size: 19px;">
             <article class="col-12">
                 <p>What is the total square footage to be cleaned:</p>
                 <label for="numberofsquarefoot"></label>
@@ -80,7 +87,7 @@
             </article>
         </section>
 
-        <section class="row" style="background-color:rgb(197, 204, 206) ; padding: 20px; letter-spacing: 0.5px; ">
+        <section class="row" style=" padding: 20px; letter-spacing: 0.5px; ">
             <article class="col-12">
                 <h2>Additional services</h2>
                 <p>Check additional rooms you would like us to clean::</p>
@@ -112,8 +119,8 @@
                 <label for="notes">Message</label>
                 <textarea row="10 col 5" name="notes" id="notes"></textarea><br/><br/><br/><br/>
            
-                <input type="reset" name="reset">
-                <input type="submit" name="submit">
+                <input type="reset" name="reset" style="background-color: yellow;">
+                <input type="submit" name="submit" style="background-color: yellow;">
             </article>
         </section>  
     </form>

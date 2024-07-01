@@ -106,14 +106,14 @@ body{
     color:white
 }
 header{
-    background-image: linear-gradient(white,rgb(171, 171, 199),yellow);
+    background-image: linear-gradient(yellow, rgb(171, 171, 199),white);
     position: static;
-    margin-top: 20%;
+    margin-top: 8%;
     margin-left: -1%;
     margin-right: -1%;
     padding-bottom: 10px;
     text-align: center;
-    height: 200px;
+    height: 250px;
     align-content: center;
     
     margin-bottom: 10%;
@@ -653,6 +653,8 @@ header{
     background-image: linear-gradient(white,rgb(171, 171, 199),yellow);
     padding-top: 2%;
     padding-bottom: 2%;
+    width: 1350px;
+    margin-left: -8px;
 }
 
 .cleaning-service-list{
@@ -676,6 +678,8 @@ header{
 .cleaning-service-list a{
     color: black;
     transition: .1s ease; 
+    padding: 3px;
+    border-radius: 5%;
 }
 .cleaning-service-list a:hover {
     background-color: rgb(7, 2, 2);
@@ -699,6 +703,10 @@ footer{
     text-align: center;
     padding-top: 2%;
     padding-bottom: 2%;
+    width: 1350px;
+    margin-left: -8px;
+    background-size: cover;
+    margin-bottom: -50px;
 }
 details{
     text-transform:capitalize;
@@ -711,7 +719,7 @@ details{
     font-size: 20px;
 }
 .team-img{
-    margin-top: 10%;
+    margin-top: -10%;
 }
 .team-images{
     column-count: 3;
@@ -720,10 +728,20 @@ details{
     margin-top: 5%;
 }
 .goal li{
-    font-size: 20px;
+    font-size: 14px;    
 }
 .goal p{
     font-size: 17px;
+}
+.satisfaction a{
+    background-color: black;
+    color: white;
+    padding: 6px;
+    border-radius: 5%;
+}
+.satisfaction a:hover{
+    background-color: rgb(156, 173, 168);
+    color: black;
 }
 
 .house-cleaning{
@@ -731,16 +749,23 @@ details{
     align-items: center;
     text-align: center;    
 }
-.house-cleaning h2{
-    font-size: 20px;
+.house-cleaning h5{
+    font-size: 18px;
+}
+.house-clean-image p{
+    font-size: 14px;
 }
 .house-clean-image{
     margin-bottom: 10%;
 }
 .house-clean-image:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: all 1s ease;
     border-radius: 50%;
+}
+
+.FAQ summary{
+    text-transform:lowercase;    
 }
 .addittional-list h1{
     text-align: center;
@@ -756,6 +781,7 @@ details{
 }
 .shop-items{
     column-count: 3;
+    margin-top: -60px;
 }
 .shop-item-image{
     margin-left: 100px;    
