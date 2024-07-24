@@ -1,13 +1,12 @@
 <!doctype html>
 <html class="index">
 <head>
-
 <meta charset="utf-8">
 <meta name ="keyword" content="HTML 5, CSS 3, JavaScript, JOuery, Angularjs"/>
-<meta name="description" content=" Dynamic web developrment">
+<meta name="description" content="Dynamic web development">
 <meta name ="author" content="mildred">
-<meta name=" viewport" content ="width=device-width, initial-scale=1.0">
-<title> float layout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Float Layout</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../CSS/CSS.css">
 <style>
@@ -17,12 +16,12 @@ tr,td{
     width: 700px;
     height: 50px;
     padding-left: 10px;
-    font-size: 17px;
+    font-size: 15px;
     border-bottom: solid 1px grey ;
 }
 input{
-    width: 300px;
-    height: 50px;
+    width: 200px;
+    height: 30px;
 }
 form{
     border: solid 1px;
@@ -34,10 +33,58 @@ form{
 h3{
     font-size: 20px;
 }
-
-
-
+#forms_container{
+    background-color: rgb(226, 226, 233);
+    width: 50%;
+    justify-content: center;
+    margin-left: 350px;
+    border: 1px black solid;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;  
+}
 </style>
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    let isValid = true;
+    const name = document.getElementById('name');
+    const address = document.getElementById('address');
+    const contact = document.getElementById('contact');
+    const email = document.getElementById('email');
+    const serviceRequested = document.getElementById('serviceRequested');
+    const date = document.getElementById('date');
+    const startTime = document.getElementById('startTime');
+    const endTime = document.getElementById('endTime');
+    
+    if (!name.value.trim()) {
+        alert('Name is required.');
+        isValid = false;
+    } else if (!address.value.trim()) {
+        alert('Address is required.');
+        isValid = false;
+    } else if (!contact.value.trim()) {
+        alert('Contact number is required.');
+        isValid = false;
+    } else if (!email.value.trim()) {
+        alert('Email is required.');
+        isValid = false;
+    } else if (serviceRequested.value === '- Please Select -') {
+        alert('Service requested is required.');
+        isValid = false;
+    } else if (!date.value) {
+        alert('Please select a date.');
+        isValid = false;
+    } else if (!startTime.value || !endTime.value) {
+        alert('Please select a time range.');
+        isValid = false;
+    }
+
+    if (isValid) {
+        document.getElementById('forms_container').submit();
+    }
+}
+</script>
 </head>
 <body> 
    <!--topnav-->    
@@ -48,7 +95,7 @@ h3{
         <li><a href="About Us.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
 
-        <div class="right" style="float: right; margin-right: 30px;" >
+        <div class="right" style="float: right; margin-right: 30px;">
         <li><a href="FAQ.html">FAQS</a></li>
         <li><a href="Tesstimonial.html">Testimonial</a></li>
         <li><a href="Shop.html">Shop</a></li>
@@ -59,13 +106,12 @@ h3{
 
     <header>
         <h1>Order Form</h1>
-       
     </header>
     
     <!--Services list-->
     <section class="row">
-        <article class="col-8">
-            <form  method="post" action="" autocomplete="off">
+        <article class="col-12">
+            <form method="post" action="" autocomplete="off" id="forms_container" onsubmit="validateForm(event)">
                 <table>
                     <tr>
                         <td colspan="2"><h2>Book your cleaning service in 60 seconds</h2></td>
@@ -75,16 +121,16 @@ h3{
                         <p>This information will be used to contact you about your service.</p></td>
                     </tr>
                     <tr>
-                        <td><label>Your Nmae</label><br/>
-                            <input type="text"></td>  
+                        <td><label>Your Name</label><br/>
+                            <input type="text" id="name"></td>  
                         <td><label>Address</label><br/>
-                        <input type="text"></td>                      
+                        <input type="text" id="address"></td>                      
                     </tr>
                     <tr>
                         <td><label>Contact No</label><br/>
-                        <input type="tel"></td>
+                        <input type="tel" id="contact"></td>
                         <td><label>Email</label><br/>
-                        <input type="text"></td>
+                        <input type="text" id="email"></td>
                     </tr>
                 </table>
               
@@ -105,7 +151,7 @@ h3{
 
                     <tr>
                         <td colspan="2"><h4>Service Requested</h4>
-                        <select>
+                        <select id="serviceRequested">
                             <option>- Please Select -</option>
                             <option>Apartment Cleaning</option>
                             <option>House Cleaning</option>
@@ -121,27 +167,19 @@ h3{
 
                     <tr>
                         <td><label>When would you like us to come?</label>
-                        <input type="date"></td>
+                        <input type="date" id="date"></td>
 
                         <td><label>Any time between </label>
-                        <input type="time"> - <input type="time"></td></td>
+                        <input type="time" id="startTime"> - <input type="time" id="endTime"></td>
                     </tr>
                     
                     <tr><td colspan="2"><p style="text-align: center;">We will confirm your service request within 24 hours. Thank you very much!</p>
                     
-                    <input type="submit" value="BOOK NOW" style="background-color: aqua; margin-left: 300px; border-color: aliceblue; cursor: pointer; width: 200px;" ></td></tr>
-                    
-                   
+                    <input type="submit" value="BOOK NOW" style="color: white; background-color: black; margin-left: 180px; border-color: aliceblue; cursor: pointer; width: 200px;" ></td></tr>
                 </table>
-                
-
-
             </form>            
-          
         </article>
     </section>
-
-
 
     <!--Cleaning services-->
 <div class="cleaning-service-container">
@@ -149,7 +187,6 @@ h3{
         <article class="col-6">     
             <div class="cleaning-service-list">
                 <div class="cleaning-p">
-            
         </div>
             <h1>Cleaning Services</h1>
             <ul>
@@ -161,8 +198,7 @@ h3{
                 <li><a href="Curtain Cleaning">Curtain Cleaning</a></li>
                 <li><a href="Window Cleaning">Window Cleaning</a></li>
                 <li><a href="Commercial Cleaning">Commercial Cleaning</a></li>
-                <li><a href="Residential Cleaning">Residential Cleaning
-                </a></li>
+                <li><a href="Residential Cleaning">Residential Cleaning</a></li>
             </ul>       
         </div>
         </article>
@@ -185,8 +221,5 @@ h3{
     <footer>
         © 2022 Cleaning. Privacy Policy
     </footer>
-    
-    
 </body>
-
 </html>

@@ -11,12 +11,61 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../CSS/CSS.css">
 <style>
-input{
-    width: 200px;
-    height: 30px;
-    
+#forms_container{
+    background-color: rgb(226, 226, 233);
+    width: 50%;
+    justify-content: center;
+    margin-left: 350px;
+    border: 1px black solid;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;  
+}
+
+#add_list li label{
+    font-size: 15px;
 }
 </style>
+<script>
+function validateForm(event) {
+    // Prevent form submission
+    event.preventDefault();
+
+    // Check if at least one service is selected
+    const services = document.querySelectorAll('input[name="services"]:checked');
+    if (services.length === 0) {
+        alert("Please select at least one service.");
+        return false;
+    }
+
+    // Check if at least one property detail is entered
+    const squareFootage = document.getElementById('square_footage').value;
+    const bathrooms = document.getElementById('bathrooms').value;
+    const bedrooms = document.getElementById('bedrooms').value;
+    const livingRooms = document.getElementById('livingrooms').value;
+    if (squareFootage == 0 && bathrooms == 0 && bedrooms == 0 && livingRooms == 0) {
+        alert("Please enter at least one property detail.");
+        return false;
+    }
+
+    // Check if frequency is selected
+    const frequency = document.getElementById('frequency').value;
+    if (frequency === "select") {
+        alert("Please select frequency.");
+        return false;
+    }
+
+    // Check if duration is specified
+    const duration = document.getElementById('duration').value;
+    if (duration == 0) {
+        alert("Please specify the number of hours.");
+        return false;
+    }
+
+    // If all checks pass, submit the form
+    document.querySelector('form').submit();
+}
+</script>
 </head>
 <body> 
     <!--topnav-->    
@@ -42,88 +91,147 @@ input{
             monthly or one-time special cleaning services <br/>for the holiday guests we
              would be happy to provide you with excellent cleaning service. </p>
     </header>
-
-    <form action="" method="POST">   
-        <section class="row" style=" padding: 20px; letter-spacing: 0.5px; font-size: 19px;">
+<div id="forms_container">
+    <form action="./Estimate.html" method="POST" onsubmit="validateForm(event)">   
+        <section class="row">
             <article class="col-12">
-                <p>What is the total square footage to be cleaned:</p>
-                <label for="numberofsquarefoot"></label>
-            <input type="number" name="squarefoot"  id="foot" required>
+                <div id="white_container">
+                <h4>Step 1: Select Services</h4>
+        <div class="service-group" style="font-size: 15px;">
 
-            <p>How many bathrooms do you want cleaned?</p>
-                <label for="numberofbathrooms"></label>
-            <input type="number" name="bathrooms"  id="bathrooms"required>
+            <input name="services" id="residential-cleaning" type="checkbox">
+            <label for="residential-cleaning">Residential Cleaning</label>  <br/>        
+    
+            <input name="services" id="commercial-cleaning" type="checkbox">
+            <label for="commercial-cleaning">Commercial Cleaning</label><br/>    
+            
+            <input name="services" id="house-cleaning" type="checkbox">
+            <label for="house-cleaning">House Cleaning</label> <br/>  
 
-            <p>How many bedrooms do you want cleaned?</p>
-                <label for="numberofbedrooms"></label>
-            <input type="number" name="bedrooms"  id="bedrooms">
+            <input name="services" id="after-renovation" type="checkbox">
+            <label for="after-renovation">After Renovation</label>  <br/> 
 
-            <p>How many living rooms do you want cleaned?</p>
-                <label for="numberoflivingrooms"></label>
-            <input type="number" name="livingrooms"  id="livingrooms" required>
+            <input name="services" id="move-in-out" type="checkbox">
+            <label for="move-in-out">Move In / Move Out</label>  <br/> 
+
+            <input name="services" id="curtain-cleaning" type="checkbox">
+            <label for="curtain-cleaning">Curtain Cleaning</label>  <br/> 
+
+            <input name="services" id="apartment-cleaning" type="checkbox">
+            <label for="apartment-cleaning">Apartment Cleaning</label> <br/>  
+
+            <input name="services" id="carpet-cleaning" type="checkbox">
+            <label for="carpet-cleaning">Сarpet Сleaning</label>  <br/> 
+
+            <input name="services" id="window-cleaning" type="checkbox">
+            <label for="window-cleaning">Window Cleaning</label> 
+        </div>
+             
+        <!--Property Detials-->
+        <div style="font-size: 15px;">
+            <h4>Step 2: Enter Property Details</h4>
+        <label for="property_type">Property Type:</label>
+        <select id="property_type">
+            <option value="select">-Select Property-</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+        </select><br/><br/>
+        <label for="square_footage">Square Footage:</label>
+        <input  value="0" id="square_footage" type="number">
+        </div><br/>
+        <!--Detai-->
+        <div style="font-size: 14px;">
+             
+            <label for="foot">What is the total square footage to be cleaned:</label>
+            <input type="number" name="squarefoot"  id="foot"  value="0"><br/><br/>
+
+            <label for="bathrooms">How many bathrooms do you want cleaned?</label>
+            <input type="number" name="bathrooms"  id="bathrooms" value="0"><br/><br/>
+
+            <label for="bedrooms">How many bedrooms do you want cleaned?</label>
+            <input type="number" name="bedrooms"  id="bedrooms" value="0"><br/><br/>
+
+            <label for="livingrooms">How many living rooms do you want cleaned?</label>
+            <input type="number" name="livingrooms"  id="livingrooms" value="0">
 
             <p>What type of kitchen do you have?</p>
             <select id="kitchen" name="kitchen" size="1">
                 <option value="kitchen">choose...</option>
-                <option value="kitchen">small</option>
-                <option value="kitchen">Large</option><br/>
+                <option value="small">small</option>
+                <option value="large">Large</option><br/>
             </select>
 
             <p>Do you have a laundry room that needs cleaning?</p>
-            <select id="kitchen" name="kitchen" size="1">
-                <option value="answer">select...</option>
-                <option value="answer">Yes</option>
-                <option value="answer">No</option><br/>
+            <select id="laundry-room" name="laundry-room" size="1">
+                <option value="select">select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option><br/>
             </select>
 
             <p>Your bathroom includes:</p>
-            <select id="kitchen" name="kitchen" size="1">
-                <option value="answer">choose...</option>
-                <option value="answer">Shower only</option>
-                <option value="answer">Tubs only</option>
-                <option value="answer">Seperate shower and tubs</option>
-                <option value="answer">None</option>
+            <select id="bathroom-includes" name="bathroom-includes" size="1">
+                <option value="choose">choose...</option>
+                <option value="shower-only">Shower only</option>
+                <option value="tub-only">Tubs only</option>
+                <option value="separate">Seperate shower and tubs</option>
+                <option value="none">None</option>
             </select>
-            </article>
-        </section>
-
-        <section class="row" style=" padding: 20px; letter-spacing: 0.5px; ">
-            <article class="col-12">
-                <h2>Additional services</h2>
-                <p>Check additional rooms you would like us to clean::</p>
+        </div>
+            
+                <!--Step 3-->
+                <h4>Step 3: Select Additional Services</h4>
                 <ul>
-                    <div>
-                    <li style="font-size:17px;"><input type="checkbox" name="question" value="diningroom" class="radio">
+                    <div id="add_list">
+                    <li ><input type="checkbox" name="question" value="diningroom" class="radio">
                     <label for="diningroom">Dining room</label></li>
 
-                    <li style="font-size: 17px;"><input type="checkbox" name="question" value="laundry" class="radio">
+                    <li ><input type="checkbox" name="question" value="laundry" class="radio">
                     <label for="laundry">laundry</label></li>
 
-                    <li style="font-size: 17px;"><input type="checkbox" name="question" value="Hallway" class="radio">
+                    <li ><input type="checkbox" name="question" value="Hallway" class="radio">
                     <label for="Hallway">Hallway</label></li>
 
-                    <li style="font-size: 17px;"><input type="checkbox" name="question" value="Notatall" class="radio">
+                    <li ><input type="checkbox" name="question" value="Notatall" class="radio">
                     <label for="Notatall">Guest room</label></li>
 
-                    <li style="font-size: 17px;"><input type="checkbox" name="question" value="Garage" class="radio">
+                    <li ><input type="checkbox" name="question" value="Garage" class="radio">
                     <label for="Garage">Garage</label></li>
 
-                    <li style="font-size:17px;"><input type="checkbox" name="question" value="office" class="radio">
+                    <li><input type="checkbox" name="question" value="office" class="radio">
                     <label for="office">Office</label></li>
 
-                    <li style="font-size: 17px;"><input type="checkbox" name="question" value="storerooms" class="radio">
-                    <label for="storerooms">Storerooms</label></li>
-                </div>
+                    <li ><input type="checkbox" name="question" value="storerooms" class="radio">
+                    <label for="storerooms">Storerooms</label></li>               
                 </ul>
+            </div>
 
                 <label for="notes">Message</label>
-                <textarea row="10 col 5" name="notes" id="notes"></textarea><br/><br/><br/><br/>
+                <textarea row="10 col 5" name="notes" id="notes"></textarea><br/><br/>
+<!--Step 4-->
+                <h4>Step 4: Enter Frequency and Duration</h4>
+        <label for="frequency">How often would you like to schedule cleaning services?</label>
+        <select id="frequency">
+            <option value="select">-Select Frequency-</option>
+            <option value="one-time">One-time</option>
+            <option value="weekly">Weekly</option>
+            <option value="bi-weekly">Bi-weekly</option>
+            <option value="monthly">Monthly</option>
+        </select><br/><br/><br/>
+        <label for="duration">How many hours of cleaning would you like to schedule?</label>
+        <input  value="0" id="duration" type="number"><br/><br/>
+
+        <input type="reset" name="reset" value="Get Costing" style="background-color:black; color: white;">
+        <p id="estimated-total"> Total: $0</p>
+
+        <p>Please submit to confirm</p>
            
-                <input type="reset" name="reset" style="background-color: yellow;">
-                <input type="submit" name="submit" style="background-color: yellow;">
+                <input type="reset" name="reset" style="background-color: black; color: white;" >
+                <input type="submit" name="submit" style="background-color: black; color: white;">
+            </div>
             </article>
         </section>  
     </form>
+</div>
 
     <!--Cleaning services-->
 <div class="cleaning-service-container">
